@@ -1,0 +1,22 @@
+services:
+  raccoonclaw:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: raccoonclaw/community:local
+    ports:
+      - "${PORT:-7891}:7891"
+    environment:
+      HOST: "0.0.0.0"
+      PORT: "7891"
+      OPENCLAW_HOME: "/app/.openclaw"
+      OPENCLAW_PROJECT_ROOT: "/app"
+      OPENCLAW_CONFIG_PATH: "/app/.openclaw/openclaw.json"
+      RACCOONCLAW_DATA_PROFILE: "${RACCOONCLAW_DATA_PROFILE:-clean}"
+      RACCOONCLAW_ENABLE_IM_CHANNELS: "${RACCOONCLAW_ENABLE_IM_CHANNELS:-false}"
+      RACCOONCLAW_ENABLE_TOOLBOX: "${RACCOONCLAW_ENABLE_TOOLBOX:-false}"
+      RACCOONCLAW_ENABLE_SCHEDULED_TASKS: "${RACCOONCLAW_ENABLE_SCHEDULED_TASKS:-true}"
+      RACCOONCLAW_ENABLE_AUTOMATION_MIRRORS: "${RACCOONCLAW_ENABLE_AUTOMATION_MIRRORS:-false}"
+    volumes:
+      - ./.openclaw:/app/.openclaw
+    restart: unless-stopped

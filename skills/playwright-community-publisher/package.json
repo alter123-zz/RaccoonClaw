@@ -1,0 +1,14 @@
+{
+  "name": "playwright-community-publisher-skill",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "auth:xueqiu": "node scripts/save_auth_state.mjs --site xueqiu",
+    "auth:futu": "node scripts/save_auth_state.mjs --site futu",
+    "auth:tiger": "node scripts/save_auth_state.mjs --site tiger",
+    "check": "node --check scripts/community_publisher.mjs && node --check scripts/save_auth_state.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.50.0"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  // 使用 frontend 项目自带的 TypeScript，确保 moduleResolution:"bundler" 生效
+  "typescript.tsdk": "edict/frontend/node_modules/typescript/lib",
+  // 让 VS Code 优先使用工作区 TypeScript 而非内置版本
+  "typescript.enablePromptUseWorkspaceTsdk": true
+}

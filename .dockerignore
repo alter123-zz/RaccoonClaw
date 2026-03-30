@@ -1,0 +1,38 @@
+# Git
+.git
+.gitignore
+
+# IDE / Editor
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+.mypy_cache
+.pytest_cache
+.venv
+venv
+.openclaw
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Frontend / build
+dashboard/dist
+edict/frontend/node_modules
+edict/frontend/dist
+
+# Local config
+.env
+
+# Docs (not needed in image)
+docs/
+*.md
+!README.md
+LICENSE

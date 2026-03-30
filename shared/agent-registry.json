@@ -1,0 +1,92 @@
+[
+  {
+    "id": "chief_of_staff",
+    "label": "总裁办",
+    "emoji": "🧭",
+    "displayRole": "Chief of Staff",
+    "rank": "需求入口",
+    "duty": "需求分诊与结果回传",
+    "apiRole": "需求入口与对外沟通"
+  },
+  {
+    "id": "planning",
+    "label": "产品规划部",
+    "emoji": "📋",
+    "displayRole": "产品规划负责人",
+    "rank": "规划中心",
+    "duty": "拆解需求与制定方案",
+    "apiRole": "需求拆解与方案规划"
+  },
+  {
+    "id": "review_control",
+    "label": "评审质控部",
+    "emoji": "🔍",
+    "displayRole": "评审质控负责人",
+    "rank": "质量关口",
+    "duty": "评审方案与把控风险",
+    "apiRole": "方案评审与风险把关"
+  },
+  {
+    "id": "delivery_ops",
+    "label": "交付运营部",
+    "emoji": "📮",
+    "displayRole": "交付运营负责人",
+    "rank": "交付中枢",
+    "duty": "派单、升级与交付协调",
+    "apiRole": "总协调、任务派发与交付监督"
+  },
+  {
+    "id": "brand_content",
+    "label": "品牌内容部",
+    "emoji": "📝",
+    "displayRole": "品牌内容负责人",
+    "rank": "内容执行",
+    "duty": "文档、内容与对外表达",
+    "apiRole": "文档内容与对外表达"
+  },
+  {
+    "id": "business_analysis",
+    "label": "经营分析部",
+    "emoji": "💰",
+    "displayRole": "经营分析负责人",
+    "rank": "分析执行",
+    "duty": "数据分析、预算与成本",
+    "apiRole": "数据分析与资源预算"
+  },
+  {
+    "id": "secops",
+    "label": "安全运维部",
+    "emoji": "🛡️",
+    "displayRole": "安全运维负责人",
+    "rank": "运维执行",
+    "duty": "运维、安全与应急响应",
+    "apiRole": "基础设施、安全与应急响应"
+  },
+  {
+    "id": "compliance_test",
+    "label": "合规测试部",
+    "emoji": "⚖️",
+    "displayRole": "合规测试负责人",
+    "rank": "测试执行",
+    "duty": "测试、验收与合规审查",
+    "apiRole": "测试验收与合规审查"
+  },
+  {
+    "id": "engineering",
+    "label": "工程研发部",
+    "emoji": "🔧",
+    "displayRole": "工程研发负责人",
+    "rank": "研发执行",
+    "duty": "工程交付与技术落地",
+    "apiRole": "工程实现与技术落地"
+  },
+  {
+    "id": "people_ops",
+    "label": "人力组织部",
+    "emoji": "👥",
+    "displayRole": "人力组织负责人",
+    "rank": "组织执行",
+    "duty": "招聘、培训与组织管理",
+    "apiRole": "招聘培训与组织管理"
+  }
+]

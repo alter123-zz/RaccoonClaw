@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Read the local-first quick start
+    url: https://github.com/alter123-zz/RaccoonClaw/blob/main/README.md
+    about: Review README and docs/getting-started before opening an issue.
+  - name: Support boundary
+    url: https://github.com/alter123-zz/RaccoonClaw/blob/main/SUPPORT.md
+    about: Read SUPPORT.md to confirm the issue is inside the community-edition support path.
+  - name: Private security report
+    url: https://github.com/alter123-zz/RaccoonClaw/blob/main/SECURITY.md
+    about: Do not file suspected vulnerabilities as public issues.

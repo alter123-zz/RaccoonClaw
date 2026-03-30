@@ -1,0 +1,154 @@
+{
+  "findingLevels": [
+    {
+      "key": "blocker",
+      "label": "Blocker",
+      "decision": "必须打回",
+      "description": "会导致方案不可交付、风险不可接受，或关键要求未被覆盖。"
+    },
+    {
+      "key": "suggestion",
+      "label": "Suggestion",
+      "decision": "可通过但需跟进",
+      "description": "不阻塞本轮推进，但需要在交付前补齐或修正。"
+    },
+    {
+      "key": "nit",
+      "label": "Nit",
+      "decision": "优化项",
+      "description": "细节润色或体验优化，不影响本轮主流程。"
+    }
+  ],
+  "checks": [
+    {
+      "key": "correctness",
+      "label": "正确性",
+      "aliases": ["正确", "需求覆盖", "验收", "目标", "范围", "功能", "要求"],
+      "prompt": "方案是否完整覆盖原始需求、范围边界和验收结果？"
+    },
+    {
+      "key": "security",
+      "label": "安全与合规",
+      "aliases": ["安全", "权限", "鉴权", "隐私", "数据", "输入校验", "合规", "风险"],
+      "prompt": "是否识别外部输入、权限、数据与合规风险，并给出约束？"
+    },
+    {
+      "key": "maintainability",
+      "label": "可维护性",
+      "aliases": ["拆解", "职责", "模块", "维护", "文档", "交接", "边界"],
+      "prompt": "任务拆解、职责边界、交付文档和后续维护成本是否清晰？"
+    },
+    {
+      "key": "performance",
+      "label": "时效与资源",
+      "aliases": ["时效", "性能", "资源", "排期", "成本", "优先级", "token", "预算"],
+      "prompt": "时间、资源、预算与目标是否匹配，是否有轻重缓急？"
+    },
+    {
+      "key": "testing",
+      "label": "验证与回滚",
+      "aliases": ["测试", "验证", "验收", "回滚", "监控", "预案", "检查"],
+      "prompt": "是否有测试、验收、监测、失败降级和回滚方案？"
+    },
+    {
+      "key": "clarity",
+      "label": "表达清晰度",
+      "aliases": ["结构", "大纲", "清晰", "读者", "可读", "逻辑", "摘要"],
+      "prompt": "结构、逻辑和表达是否清晰，接手人是否可以直接执行？"
+    },
+    {
+      "key": "brand",
+      "label": "品牌一致性",
+      "aliases": ["品牌", "语气", "人设", "口径", "渠道", "风格"],
+      "prompt": "输出是否符合品牌/账号调性和目标渠道的表达要求？"
+    },
+    {
+      "key": "evidence",
+      "label": "证据与数据",
+      "aliases": ["数据", "证据", "样本", "来源", "指标", "假设", "引用"],
+      "prompt": "结论是否有证据、数据或明确假设支撑，而不是纯主观判断？"
+    },
+    {
+      "key": "recommendation",
+      "label": "结论与建议",
+      "aliases": ["结论", "建议", "推荐", "场景", "行动项", "优先级"],
+      "prompt": "方案是否给出明确结论、建议场景和下一步动作？"
+    },
+    {
+      "key": "delivery",
+      "label": "交付节奏",
+      "aliases": ["交付", "发布时间", "排期", "复盘", "上线", "发送", "节奏"],
+      "prompt": "是否明确交付节奏、执行顺序、复盘节点和反馈闭环？"
+    },
+    {
+      "key": "service_scope",
+      "label": "服务边界",
+      "aliases": ["边界", "范围", "报价", "售后", "支持", "SLA", "限制"],
+      "prompt": "服务范围、交付边界、报价与售后责任是否清晰？"
+    },
+    {
+      "key": "learning",
+      "label": "学习结果",
+      "aliases": ["课程", "训练", "学习", "作业", "成果", "路径", "复训"],
+      "prompt": "学习目标、课程结构、作业产出与复训机制是否清晰？"
+    }
+  ],
+  "profiles": {
+    "default": {
+      "label": "通用评审",
+      "requiredChecks": ["correctness", "maintainability", "performance", "testing"],
+      "readinessChecks": ["correctness", "maintainability", "testing"],
+      "focus": ["需求覆盖", "职责边界", "交付可验证", "失败可回退"]
+    },
+    "all": {
+      "label": "全局协同评审",
+      "requiredChecks": ["correctness", "maintainability", "performance", "testing"],
+      "readinessChecks": ["correctness", "maintainability", "testing"],
+      "focus": ["跨部门协同边界", "审批是否可追踪", "交付和回传是否闭环"]
+    },
+    "app_dev": {
+      "label": "应用开发评审",
+      "requiredChecks": ["correctness", "security", "maintainability", "performance", "testing"],
+      "readinessChecks": ["correctness", "maintainability", "testing"],
+      "focus": ["异常路径", "上线与回滚", "接口正确性", "测试覆盖"]
+    },
+    "content_creation": {
+      "label": "内容创作评审",
+      "requiredChecks": ["clarity", "brand", "evidence", "recommendation", "delivery"],
+      "readinessChecks": ["clarity", "brand", "delivery"],
+      "focus": ["选题结构", "品牌口径", "发布时间与复盘节点"]
+    },
+    "marketing_consulting": {
+      "label": "营销咨询评审",
+      "requiredChecks": ["evidence", "recommendation", "clarity", "performance", "delivery"],
+      "readinessChecks": ["evidence", "recommendation", "delivery"],
+      "focus": ["数据与假设", "成交建议", "行动优先级", "复盘口径"]
+    },
+    "tech_service": {
+      "label": "技术服务评审",
+      "requiredChecks": ["correctness", "service_scope", "security", "performance", "testing"],
+      "readinessChecks": ["correctness", "service_scope", "testing"],
+      "focus": ["交付边界", "风险与回滚", "报价/支持范围", "验收节点"]
+    },
+    "education_training": {
+      "label": "教育培训评审",
+      "requiredChecks": ["learning", "clarity", "evidence", "recommendation", "delivery"],
+      "readinessChecks": ["learning", "clarity", "delivery"],
+      "focus": ["学习路径", "课程结果", "招生与复购动作", "课后交付"]
+    }
+  },
+  "dynamicSignals": [
+    {
+      "match": ["登录", "支付", "鉴权", "Webhook", "API", "接口", "外部输入", "插件"],
+      "addChecks": ["security", "testing"]
+    },
+    {
+      "match": ["调研", "对比", "分析", "竞品", "报告"],
+      "addChecks": ["evidence", "recommendation"]
+    },
+    {
+      "match": ["发布", "播报", "推送", "发送", "邮件", "私信", "飞书"],
+      "addChecks": ["delivery", "testing"]
+    }
+  ]
+}

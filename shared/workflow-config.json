@@ -1,0 +1,128 @@
+{
+  "pipeline": [
+    { "key": "Inbox", "dept": "需求方", "icon": "👤", "action": "发起" },
+    { "key": "ChiefOfStaff", "dept": "总裁办", "icon": "🧭", "action": "分诊" },
+    { "key": "Planning", "dept": "产品规划部", "icon": "📋", "action": "规划" },
+    { "key": "ReviewControl", "dept": "评审质控部", "icon": "🔍", "action": "评审" },
+    { "key": "Assigned", "dept": "交付运营部", "icon": "📮", "action": "派发" },
+    { "key": "Doing", "dept": "专项团队", "icon": "⚙️", "action": "执行" },
+    { "key": "Review", "dept": "交付运营部", "icon": "🔎", "action": "复核" },
+    { "key": "Done", "dept": "结果回传", "icon": "✅", "action": "完成" }
+  ],
+  "stateIndex": {
+    "Inbox": 0,
+    "Pending": 0,
+    "ChiefOfStaff": 1,
+    "Planning": 2,
+    "ReviewControl": 3,
+    "Assigned": 4,
+    "Next": 4,
+    "Doing": 5,
+    "Blocked": 5,
+    "Cancelled": 5,
+    "Review": 6,
+    "Done": 7
+  },
+  "stateLabels": {
+    "Inbox": "收件",
+    "Pending": "待处理",
+    "ChiefOfStaff": "总裁办分诊",
+    "Planning": "产品规划",
+    "ReviewControl": "评审质控",
+    "Assigned": "已派发",
+    "Next": "待执行",
+    "Doing": "执行中",
+    "Review": "交付复核",
+    "Done": "已完成",
+    "Blocked": "阻塞",
+    "Cancelled": "已取消"
+  },
+  "boardOrder": {
+    "Doing": 0,
+    "Review": 1,
+    "Assigned": 2,
+    "ReviewControl": 3,
+    "Planning": 4,
+    "ChiefOfStaff": 5,
+    "Inbox": 6,
+    "Blocked": 7,
+    "Next": 8,
+    "Done": 9,
+    "Cancelled": 10
+  },
+  "terminalStates": ["Done", "Cancelled"],
+  "stopDisabledStates": ["Done", "Blocked", "Cancelled"],
+  "resumableStates": ["Blocked", "Cancelled"],
+  "orgResolvedStates": ["Doing", "Next"],
+  "stateAgentMap": {
+    "Pending": "planning",
+    "ChiefOfStaff": "chief_of_staff",
+    "Planning": "planning",
+    "ReviewControl": "review_control",
+    "Assigned": "delivery_ops",
+    "Doing": null,
+    "Next": null,
+    "Review": "delivery_ops"
+  },
+  "manualAdvance": {
+    "Pending": {
+      "next": "ChiefOfStaff",
+      "from": "需求方",
+      "to": "总裁办",
+      "remark": "待处理任务转交总裁办分诊"
+    },
+    "ChiefOfStaff": {
+      "next": "Planning",
+      "from": "总裁办",
+      "to": "产品规划部",
+      "remark": "总裁办分诊完毕，转产品规划部规划"
+    },
+    "Planning": {
+      "next": "ReviewControl",
+      "from": "产品规划部",
+      "to": "评审质控部",
+      "remark": "产品规划部方案提交评审质控部审核"
+    },
+    "ReviewControl": {
+      "next": "Assigned",
+      "from": "评审质控部",
+      "to": "交付运营部",
+      "remark": "评审质控部通过，转交付运营部派发"
+    },
+    "Assigned": {
+      "next": "Doing",
+      "from": "交付运营部",
+      "to": "专项团队",
+      "remark": "交付运营部开始派发执行"
+    },
+    "Next": {
+      "next": "Doing",
+      "from": "交付运营部",
+      "to": "专项团队",
+      "remark": "待执行任务开始执行"
+    },
+    "Doing": {
+      "next": "Review",
+      "from": "专项团队",
+      "to": "交付运营部",
+      "remark": "各团队完成，进入汇总"
+    },
+    "Review": {
+      "next": "Done",
+      "from": "交付运营部",
+      "to": "需求方",
+      "remark": "全流程完成，结果回传需求方"
+    }
+  },
+  "stateTransitions": {
+    "Pending": ["ChiefOfStaff", "Cancelled"],
+    "ChiefOfStaff": ["Planning", "Cancelled"],
+    "Planning": ["ReviewControl", "Cancelled", "Blocked"],
+    "ReviewControl": ["Assigned", "Planning", "Cancelled"],
+    "Assigned": ["Doing", "Next", "Cancelled", "Blocked"],
+    "Next": ["Doing", "Cancelled"],
+    "Doing": ["Review", "Done", "Blocked", "Cancelled"],
+    "Review": ["Done", "Doing", "Cancelled"],
+    "Blocked": ["ChiefOfStaff", "Planning", "ReviewControl", "Assigned", "Doing"]
+  }
+}

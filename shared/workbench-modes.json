@@ -1,0 +1,74 @@
+[
+  {
+    "key": "all",
+    "icon": "🧭",
+    "label": "全局协同",
+    "desc": "查看全部业务模式和完整组织链路。",
+    "defaultTargetDept": "工程研发部",
+    "agentIds": ["chief_of_staff", "planning", "review_control", "delivery_ops", "brand_content", "business_analysis", "secops", "compliance_test", "engineering", "people_ops"],
+    "depts": ["总裁办", "产品规划部", "评审质控部", "交付运营部", "品牌内容部", "经营分析部", "安全运维部", "合规测试部", "工程研发部", "人力组织部"],
+    "specialistDepts": ["品牌内容部", "经营分析部", "安全运维部", "合规测试部", "工程研发部", "人力组织部"],
+    "workflow": ["总裁办", "产品规划部", "评审质控部", "交付运营部", "专项团队"],
+    "templateIds": []
+  },
+  {
+    "key": "app_dev",
+    "icon": "🧩",
+    "label": "应用开发",
+    "desc": "适合 SaaS、工具、自动化和 AI 应用型一人公司。",
+    "defaultTargetDept": "工程研发部",
+    "agentIds": ["chief_of_staff", "planning", "review_control", "delivery_ops", "engineering", "compliance_test", "secops"],
+    "depts": ["总裁办", "产品规划部", "评审质控部", "交付运营部", "工程研发部", "合规测试部", "安全运维部"],
+    "specialistDepts": ["工程研发部", "合规测试部", "安全运维部"],
+    "workflow": ["总裁办", "产品规划部", "评审质控部", "交付运营部", "工程研发部", "合规测试部", "安全运维部"],
+    "templateIds": ["opc-app-dev-launch", "tpl-api-design", "tpl-deploy", "tpl-code-review", "tpl-bugfix", "tpl-page-revamp", "tpl-automation-script", "tpl-meeting-minutes", "tpl-action-breakdown", "tpl-boss-brief", "tpl-push-reminder", "tpl-project-retro", "tpl-feedback-analysis"]
+  },
+  {
+    "key": "content_creation",
+    "icon": "✍️",
+    "label": "内容创作",
+    "desc": "适合自媒体、知识 IP、品牌内容和个人内容工作室。",
+    "defaultTargetDept": "品牌内容部",
+    "agentIds": ["chief_of_staff", "planning", "review_control", "delivery_ops", "brand_content", "business_analysis"],
+    "depts": ["总裁办", "产品规划部", "评审质控部", "交付运营部", "品牌内容部", "经营分析部"],
+    "specialistDepts": ["品牌内容部", "经营分析部"],
+    "workflow": ["总裁办", "产品规划部", "评审质控部", "交付运营部", "品牌内容部", "经营分析部"],
+    "templateIds": ["opc-content-studio", "tpl-blog", "tpl-email", "tpl-data-report", "tpl-title-polish", "tpl-social-post", "tpl-poster-copy", "tpl-external-reply", "tpl-boss-brief", "tpl-push-reminder", "tpl-project-retro", "tpl-feedback-analysis", "tpl-industry-brief"]
+  },
+  {
+    "key": "marketing_consulting",
+    "icon": "📣",
+    "label": "营销咨询",
+    "desc": "适合增长顾问、品牌顾问、咨询提案和商业分析类一人公司。",
+    "defaultTargetDept": "经营分析部",
+    "agentIds": ["chief_of_staff", "planning", "review_control", "delivery_ops", "business_analysis", "brand_content"],
+    "depts": ["总裁办", "产品规划部", "评审质控部", "交付运营部", "经营分析部", "品牌内容部"],
+    "specialistDepts": ["经营分析部", "品牌内容部"],
+    "workflow": ["总裁办", "产品规划部", "评审质控部", "交付运营部", "经营分析部", "品牌内容部"],
+    "templateIds": ["opc-marketing-consulting", "tpl-competitor", "tpl-data-report", "tpl-email", "tpl-meeting-minutes", "tpl-action-breakdown", "tpl-followup-summary", "tpl-boss-brief", "tpl-push-reminder", "tpl-project-retro", "tpl-external-reply", "tpl-feedback-analysis", "tpl-sales-funnel", "tpl-industry-brief", "tpl-title-polish", "tpl-social-post", "tpl-poster-copy"]
+  },
+  {
+    "key": "tech_service",
+    "icon": "🛠️",
+    "label": "技术服务",
+    "desc": "适合网站交付、系统改造、AI 集成和技术顾问服务型一人公司。",
+    "defaultTargetDept": "工程研发部",
+    "agentIds": ["chief_of_staff", "planning", "review_control", "delivery_ops", "engineering", "secops", "compliance_test"],
+    "depts": ["总裁办", "产品规划部", "评审质控部", "交付运营部", "工程研发部", "安全运维部", "合规测试部"],
+    "specialistDepts": ["工程研发部", "安全运维部", "合规测试部"],
+    "workflow": ["总裁办", "产品规划部", "评审质控部", "交付运营部", "工程研发部", "安全运维部", "合规测试部"],
+    "templateIds": ["opc-tech-service-delivery", "tpl-deploy", "tpl-code-review", "tpl-api-design", "tpl-bugfix", "tpl-page-revamp", "tpl-automation-script", "tpl-action-breakdown", "tpl-followup-summary", "tpl-boss-brief", "tpl-push-reminder", "tpl-project-retro", "tpl-sales-funnel", "tpl-external-reply"]
+  },
+  {
+    "key": "education_training",
+    "icon": "🎓",
+    "label": "教育培训",
+    "desc": "适合课程、训练营、工作坊和咨询式培训业务。",
+    "defaultTargetDept": "品牌内容部",
+    "agentIds": ["chief_of_staff", "planning", "review_control", "delivery_ops", "brand_content", "business_analysis"],
+    "depts": ["总裁办", "产品规划部", "评审质控部", "交付运营部", "品牌内容部", "经营分析部"],
+    "specialistDepts": ["品牌内容部", "经营分析部"],
+    "workflow": ["总裁办", "产品规划部", "评审质控部", "交付运营部", "品牌内容部", "经营分析部"],
+    "templateIds": ["opc-education-program", "tpl-blog", "tpl-email", "tpl-meeting-minutes", "tpl-action-breakdown", "tpl-followup-summary", "tpl-boss-brief", "tpl-push-reminder", "tpl-project-retro", "tpl-external-reply", "tpl-feedback-analysis", "tpl-industry-brief", "tpl-title-polish", "tpl-social-post", "tpl-poster-copy"]
+  }
+]

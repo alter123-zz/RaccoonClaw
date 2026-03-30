@@ -1,0 +1,185 @@
+{
+  "xueqiu": {
+    "signedOut": [
+      "text=登录",
+      "text=手机号登录"
+    ],
+    "actions": {
+      "comment": {
+        "openComposer": [
+          "button:has-text(\"评论\")",
+          "text=写评论",
+          "[data-testid=\"comment-button\"]"
+        ],
+        "composer": [
+          "textarea",
+          "[contenteditable=\"true\"]",
+          "[placeholder*=\"写\"]"
+        ],
+        "submit": [
+          "a.lite-editor__submit:not(.disabled)",
+          ".lite-editor__toolbar__post a.lite-editor__submit:not(.disabled)",
+          "a:has-text(\"发布\")",
+          "button:has-text(\"发布\")",
+          "button:has-text(\"发送\")",
+          "button:has-text(\"评论\")"
+        ]
+      },
+      "discussion": {
+        "openComposer": [
+          "button:has-text(\"发帖\")",
+          "a:has-text(\"发帖\")",
+          "text=发帖"
+        ],
+        "chooseMode": [
+          "text=发讨论",
+          "button:has-text(\"发讨论\")"
+        ],
+        "imageTrigger": [
+          "button:has-text(\"图片\")",
+          "a:has-text(\"图片\")",
+          "text=图片"
+        ],
+        "imageInput": [
+          "input[type=\"file\"][accept*=\"image\"]",
+          "input[type=\"file\"]"
+        ],
+        "composer": [
+          ".lite-editor__textarea.post_status",
+          ".editor-container .lite-editor__textarea",
+          ".lite-editor__bd .lite-editor__textarea",
+          ".medium-editor-element[role='textbox']",
+          "textarea",
+          "[contenteditable=\"true\"]",
+          "[placeholder*=\"讨论\"]",
+          "text=发表你的观点",
+          "[placeholder*=\"分享\"]"
+        ],
+        "submit": [
+          "a.lite-editor__submit:not(.disabled)",
+          ".lite-editor__toolbar__post a.lite-editor__submit:not(.disabled)",
+          "a:has-text(\"发布\")",
+          "a:has-text(\"发表\")",
+          "button:has-text(\"发布\")",
+          "button:has-text(\"发表\")"
+        ]
+      }
+    }
+  },
+  "futu": {
+    "signedOut": [
+      "text=登录",
+      "text=立即登录",
+      "text=注册/登录"
+    ],
+    "actions": {
+      "comment": {
+        "openComposer": [
+          "button:has-text(\"评论\")",
+          "text=写评论"
+        ],
+        "composer": [
+          "textarea",
+          "[contenteditable=\"true\"]"
+        ],
+        "submit": [
+          "button:has-text(\"发布\")",
+          "button:has-text(\"发送\")"
+        ]
+      },
+      "discussion": {
+        "openComposer": [
+          "button:has-text(\"发帖\")",
+          "a:has-text(\"发帖\")",
+          "button:has-text(\"发布\")",
+          "a:has-text(\"发布\")",
+          "text=发帖"
+        ],
+        "chooseMode": [
+          "text=发讨论",
+          "text=讨论",
+          "button:has-text(\"发讨论\")",
+          "button:has-text(\"讨论\")"
+        ],
+        "composer": [
+          ".modal textarea",
+          ".modal [contenteditable=\"true\"]",
+          ".dialog textarea",
+          ".dialog [contenteditable=\"true\"]",
+          "[placeholder*=\"说点什么\"]",
+          "[placeholder*=\"分享\"]",
+          "[placeholder*=\"讨论\"]",
+          "textarea",
+          "[contenteditable=\"true\"]"
+        ],
+        "submit": [
+          ".modal button:not([disabled]):has-text(\"发布\")",
+          ".dialog button:not([disabled]):has-text(\"发布\")",
+          "button:not([disabled]):has-text(\"发布\")",
+          "button:not([disabled]):has-text(\"发送\")",
+          "a:not(.disabled):has-text(\"发布\")"
+        ]
+      }
+    }
+  },
+  "tiger": {
+    "signedOut": [
+      "text=登录",
+      "text=Sign in",
+      "text=立即登录"
+    ],
+    "actions": {
+      "comment": {
+        "openComposer": [
+          "button:has-text(\"评论\")",
+          "text=写评论"
+        ],
+        "composer": [
+          "textarea",
+          "[contenteditable=\"true\"]"
+        ],
+        "submit": [
+          "button:has-text(\"发布\")",
+          "button:has-text(\"发送\")"
+        ]
+      },
+      "discussion": {
+        "openComposer": [
+          "button:has-text(\"发帖\")",
+          "a:has-text(\"发帖\")",
+          "button:has-text(\"发布\")",
+          "a:has-text(\"发布\")",
+          "text=发帖",
+          "text=Post"
+        ],
+        "chooseMode": [
+          "text=发讨论",
+          "text=讨论",
+          "button:has-text(\"发讨论\")",
+          "button:has-text(\"讨论\")",
+          "button:has-text(\"Post\")"
+        ],
+        "composer": [
+          ".modal textarea",
+          ".modal [contenteditable=\"true\"]",
+          ".dialog textarea",
+          ".dialog [contenteditable=\"true\"]",
+          "[placeholder*=\"说点什么\"]",
+          "[placeholder*=\"分享\"]",
+          "[placeholder*=\"讨论\"]",
+          "textarea",
+          "[contenteditable=\"true\"]"
+        ],
+        "submit": [
+          ".modal button:not([disabled]):has-text(\"发布\")",
+          ".dialog button:not([disabled]):has-text(\"发布\")",
+          ".modal button:not([disabled]):has-text(\"Post\")",
+          "button:not([disabled]):has-text(\"发布\")",
+          "button:not([disabled]):has-text(\"发送\")",
+          "button:not([disabled]):has-text(\"Post\")",
+          "a:not(.disabled):has-text(\"发布\")"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  backend-frontend-regressions:
+    runs-on: ubuntu-latest
+    env:
+      OPENCLAW_HOME: ${{ github.workspace }}/.openclaw
+      RACCOONCLAW_DATA_PROFILE: demo
+      RACCOONCLAW_ENABLE_IM_CHANNELS: "false"
+      RACCOONCLAW_ENABLE_TOOLBOX: "false"
+      RACCOONCLAW_ENABLE_SCHEDULED_TASKS: "true"
+      RACCOONCLAW_ENABLE_AUTOMATION_MIRRORS: "false"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Syntax check (py_compile)
+        run: |
+          find scripts dashboard edict/backend -name '*.py' | while read f; do
+            echo "  checking $f"
+            python3 -m py_compile "$f"
+          done
+
+      - name: Install backend dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          pip install -r edict/backend/requirements.txt pytest playwright
+
+      - name: Install frontend dependencies
+        working-directory: edict/frontend
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: python3 -m playwright install --with-deps chromium
+
+      - name: Seed demo runtime
+        run: |
+          python3 scripts/seed_runtime_data.py --profile demo --repo-dir "$GITHUB_WORKSPACE" --openclaw-home "$OPENCLAW_HOME" --force
+
+      - name: Run backend regressions
+        run: python3 -m unittest discover -s tests -p 'test_*.py'
+
+      - name: Build frontend
+        working-directory: edict/frontend
+        run: npm run build
+
+      - name: Shell lint (bash -n)
+        run: |
+          bash -n install.sh
+          bash -n scripts/run_single_backend.sh
+
+      - name: Start backend
+        run: |
+          bash scripts/run_single_backend.sh > /tmp/raccoonclaw-backend.log 2>&1 &
+          sleep 8
+
+      - name: Run UI smoke
+        run: python3 scripts/ui_smoke.py
