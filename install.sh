@@ -186,7 +186,7 @@ init_data() {
   info "初始化仓库数据目录"
   mkdir -p "$REPO_DIR/data"
 
-  for file in live_status.json agent_config.json model_change_log.json; do
+  for file in live_status.json model_change_log.json pending_model_changes.json tasks_source.json; do
     if [ ! -f "$REPO_DIR/data/$file" ]; then
       echo '{}' > "$REPO_DIR/data/$file"
     fi

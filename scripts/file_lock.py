@@ -82,8 +82,18 @@ def atomic_json_update(
 
 def atomic_json_write(path: pathlib.Path, data: Any) -> None:
     """原子写入 JSON 文件（持排他锁 + tmpfile rename）。
-    直接写入，不读取现有内容（避免 atomic_json_update 的多余读开销）。
+    带降级机制：若 flock 或 tmpfile 操作失败，自动降级为直接写入。
     """
+    try:
+        _atomic_json_write_impl(path, data)
+    except Exception:
+        # 降级：直接写文件
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding='utf-8')
+
+
+def _atomic_json_write_impl(path: pathlib.Path, data: Any) -> None:
+    """原子写入实现（持排他锁 + tmpfile rename）。"""
     lock_file = _lock_path(path)
     lock_file.parent.mkdir(parents=True, exist_ok=True)
     fd = os.open(str(lock_file), os.O_CREAT | os.O_RDWR)
