@@ -36,8 +36,9 @@ OpenClaw Runtime (~/.openclaw/)
 
 **依赖**：
 - **必须**：[OpenClaw](https://github.com/openclaw/openclaw) 已安装并初始化
-- **必须**：Python 3.11+
+- **必须**：Python 3.11+（会自动创建虚拟环境）
 - **可选**：Redis（启用实时推送，不填则降级为轮询）
+- **可选**：Node.js 18+（仅重新构建前端时需要）
 - **可选**：Node.js 18+（仅重新构建前端时需要）
 
 ## 组织结构
@@ -57,11 +58,20 @@ OpenClaw Runtime (~/.openclaw/)
 
 ## 快速开始
 
+### 前置要求
+
+- **必须**：已安装并初始化 [OpenClaw](https://github.com/openclaw/openclaw)
+- **必须**：Python 3.11+
+- **可选**：Node.js 18+（仅重新构建前端时需要）
+
 ### 1. 安装
 
 ```bash
-git clone https://github.com/your-org/RaccoonClaw-OSS.git
-cd RaccoonClaw-OSS
+# 如已有旧目录，先删除：
+# rm -rf RaccoonClaw
+
+git clone https://github.com/alter123-zz/RaccoonClaw.git
+cd RaccoonClaw
 chmod +x install.sh
 ./install.sh
 ```
@@ -69,7 +79,7 @@ chmod +x install.sh
 `install.sh` 会：
 - 创建 10 个 canonical OpenClaw workspaces
 - 注册 Agent 配置到 `~/.openclaw/openclaw.json`
-- 安装 Python 依赖
+- 创建 Python 虚拟环境并安装依赖
 - 构建 React 前端（需要 Node.js）
 - 同步初始数据
 

@@ -32,14 +32,18 @@ RaccoonClaw-OSS is an OpenClaw-based multi-Agent workspace. It unifies task inta
 
 ### Prerequisites
 
-- Python 3.11+
-- [OpenClaw](https://github.com/openclaw/openclaw) installed and initialized
+- **Required**: [OpenClaw](https://github.com/openclaw/openclaw) installed and initialized
+- **Required**: Python 3.11+ (a virtual environment will be created automatically)
+- **Optional**: Node.js 18+ (only if you want to rebuild the frontend)
 
 ### Installation
 
 ```bash
-git clone https://github.com/your-org/RaccoonClaw-OSS.git
-cd RaccoonClaw-OSS
+# If you have an old copy:
+# rm -rf RaccoonClaw
+
+git clone https://github.com/alter123-zz/RaccoonClaw.git
+cd RaccoonClaw
 chmod +x install.sh
 ./install.sh
 ```
