@@ -61,8 +61,27 @@ check_deps() {
 }
 
 configure_exec_security() {
-  info "exec 安全配置由 exec-approvals.json 负责（无需修改 openclaw.json）"
-  openclaw gateway restart >/dev/null 2>&1 && log "Gateway 已重启" || warn "Gateway 重启失败"
+  info "配置 exec 免审批（写入 exec-approvals.json）"
+  mkdir -p "$OPENCLAW_HOME"
+  cat > "$OPENCLAW_HOME/exec-approvals.json" << 'APPROVALS_EOF'
+{
+  "version": 1,
+  "defaults": {
+    "security": "full",
+    "ask": "off",
+    "askFallback": "full",
+    "autoAllowSkills": true
+  },
+  "agents": {
+    "main": {
+      "security": "full",
+      "ask": "off"
+    }
+  }
+}
+APPROVALS_EOF
+  log "exec-approvals.json 已写入"
+  openclaw gateway restart >/dev/null 2>&1 && log "Gateway 已重启" || warn "Gateway 重启失败，请手动运行 openclaw gateway restart"
 }
 
 backup_existing() {
