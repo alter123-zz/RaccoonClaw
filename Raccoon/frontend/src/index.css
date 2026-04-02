@@ -11395,3 +11395,45 @@ code {
 }
 .sidebar-hamburger:hover { background: var(--bg-3, #3a3a3a); }
 .workspace-sidebar-overlay.hidden { display: none; }
+
+/* ── 13寸 MacBook（≈1280px）：对话页专项适配 ── */
+@media (max-width: 1280px) {
+  .illustrated-room.scene-dialog {
+    width: 40%;
+    height: 32%;
+    top: 2%;
+    right: 2%;
+  }
+  .illustrated-room.scene-dialog .illustrated-room-title {
+    font-size: 13px;
+    max-width: 90%;
+  }
+  .illustrated-room.scene-dialog .illustrated-room-bubble {
+    font-size: 12px;
+    max-width: 90%;
+    padding: 8px 10px;
+  }
+  .illustrated-room.scene-dialog .illustrated-room-roster {
+    top: 8px;
+    right: 8px;
+    font-size: 11px;
+  }
+  /* 对话气泡间距 */
+  .illustrated-room-bubble { margin-bottom: 6px; }
+  /* 头部压缩 */
+  .hdr { padding: 6px 10px !important; }
+  .ms-value { font-size: 24px !important; }
+  /* 侧边栏收紧 */
+  .workspace-sidebar { width: 220px !important; }
+}
+
+/* ── 13寸高度偏小（≈770px） ── */
+@media (max-height: 780px) and (max-width: 1280px) {
+  .illustrated-room.scene-dialog {
+    height: 28%;
+    top: 2%;
+  }
+  .hdr { min-height: 38px !important; padding: 4px 8px !important; }
+  .board-column-header { padding: 5px 8px !important; }
+  .board-card { padding: 5px 8px !important; }
+}
