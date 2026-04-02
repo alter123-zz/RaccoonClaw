@@ -11327,124 +11327,54 @@ code {
 }
 
 /* ══════════════════════════════════════════════════════
-   Responsive Design — 小屏适配
+   Responsive Design — 全面小屏适配
    ══════════════════════════════════════════════════════ */
 
-/* 看板 4 列 → 2 列 → 1 列 */
-@media (max-width: 1100px) {
-  .board-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  }
-  .board-column {
-    min-width: 0;
-  }
-}
-
-@media (max-width: 680px) {
-  .board-grid {
-    grid-template-columns: 1fr !important;
-  }
-  .board-scroll {
-    overflow-x: auto;
-    overflow-y: hidden;
-  }
-  .board-scroll .board-grid {
-    display: flex;
-    flex-direction: row;
-    min-width: max-content;
-  }
-  .board-scroll .board-column {
-    min-width: 280px;
-    flex-shrink: 0;
-  }
-}
-
-/* 整体容器缩小间距 */
-@media (max-width: 900px) {
-  .wrap {
-    padding: 14px 12px 30px;
-  }
-  .ms-value {
-    font-size: 28px !important;
-  }
-  .board-shell {
-    gap: 10px;
-  }
-}
-
-/* 侧边栏折叠按钮 */
+/* ── 768px 以下：平板 / 小笔记本 ── */
 @media (max-width: 768px) {
-  .workspace-sidebar {
-    position: fixed;
-    left: -240px;
-    top: 0;
-    bottom: 0;
-    width: 240px;
-    z-index: 1000;
-    background: var(--bg);
-    box-shadow: 2px 0 8px rgba(0,0,0,0.3);
-    transition: left 0.25s ease;
-    overflow-y: auto;
-  }
-  .workspace-sidebar.open {
-    left: 0;
-  }
-  .workspace-sidebar-overlay {
-    display: block;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.4);
-    z-index: 999;
-  }
-  .workspace-sidebar:not(.open) ~ .workspace-sidebar-overlay {
-    display: none;
-  }
-  .wrap {
-    padding: 10px 10px 30px;
-  }
-  .hdr {
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .brand-wrap {
-    flex-direction: row;
-  }
-  /* 小屏隐藏次要头部元素 */
-  .hdr-r {
-    display: none;
-  }
-  /* 看板列全宽 */
-  .board-grid {
-    grid-template-columns: 1fr !important;
-  }
-  /* 数字统计卡片 2 列 */
-  .stats-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  }
-  /* 关注列表 2 列 */
-  .focus-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  }
+  .wrap { padding: 10px 10px 40px !important; overflow-x: hidden; }
+  .hdr { min-height: 44px !important; padding: 6px 8px !important; flex-wrap: wrap; gap: 6px; }
+  .hdr-r { display: none !important; }
+  .brand-wrap { flex-direction: row !important; gap: 6px; }
+  .ms-value { font-size: 22px !important; }
+  .workspace-sidebar { position: fixed !important; left: -260px !important; top: 0 !important; bottom: 0 !important; width: 260px !important; z-index: 1000; background: var(--bg) !important; box-shadow: 2px 0 16px rgba(0,0,0,0.4); transition: left 0.28s ease; overflow-y: auto; padding-bottom: 40px; }
+  .workspace-sidebar.open { left: 0 !important; }
+  .workspace-sidebar-overlay { display: block !important; position: fixed !important; inset: 0 !important; background: rgba(0,0,0,0.5) !important; z-index: 999; }
+  .workspace-sidebar-overlay.hidden { display: none !important; }
+  .sidebar-hamburger { display: block !important; }
+  .board-shell { gap: 8px !important; }
+  .board-scroll { overflow-x: auto !important; overflow-y: auto !important; }
+  .board-grid { display: flex !important; flex-direction: row !important; min-width: max-content; gap: 10px; }
+  .board-column { min-width: 260px !important; max-width: 260px !important; flex-shrink: 0; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; }
+  .focus-list { grid-template-columns: repeat(2, 1fr) !important; }
+  .mission-actions { flex-direction: column !important; gap: 6px !important; }
 }
 
-/* 隐藏小屏不适用的元素 */
+/* ── 480px 以下：手机尺寸 ── */
 @media (max-width: 480px) {
-  .board-scroll {
-    overflow-x: auto;
-    overflow-y: auto;
-  }
-  .board-scroll .board-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    min-width: 0;
-  }
-  .stats-grid,
-  .focus-list {
-    grid-template-columns: 1fr !important;
-  }
-  .mission-actions {
-    flex-direction: column;
-  }
+  .wrap { padding: 8px 8px 48px !important; }
+  .ms-value { font-size: 18px !important; }
+  .board-column { min-width: 220px !important; max-width: 220px !important; }
+  .stats-grid, .focus-list { grid-template-columns: 1fr !important; }
+  .board-scroll .board-grid { display: grid !important; grid-template-columns: 1fr !important; min-width: 0 !important; }
+  .mission-panel { padding: 8px !important; }
+}
+
+/* ── 小高度屏幕（高度 < 700px） ── */
+@media (max-height: 700px) {
+  .hdr { min-height: 36px !important; padding: 4px 8px !important; }
+  .board-shell { gap: 6px !important; }
+  .board-column-header { padding: 6px 8px !important; }
+  .board-card { padding: 6px 8px !important; }
+  .stats-grid { gap: 6px !important; }
+  .stat-card { padding: 8px !important; }
+}
+
+/* ── 极小高度（< 500px） ── */
+@media (max-height: 500px) {
+  .hdr { display: none !important; }
+  .sidebar-hamburger { top: 4px !important; }
 }
 
 /* ── Hamburger 按钮 ── */
@@ -11461,26 +11391,7 @@ code {
   padding: 6px 10px;
   border-radius: 4px;
   cursor: pointer;
+  line-height: 1;
 }
-.sidebar-hamburger:hover {
-  background: var(--bg-3, #3a3a3a);
-}
-
-/* ── Overlay 遮罩（侧边栏打开时显示） ── */
-.workspace-sidebar-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  z-index: 998;
-}
-.workspace-sidebar-overlay.hidden {
-  display: none;
-}
-
-/* 小屏时显示 hamburger */
-@media (max-width: 768px) {
-  .sidebar-hamburger {
-    display: block;
-  }
-}
+.sidebar-hamburger:hover { background: var(--bg-3, #3a3a3a); }
+.workspace-sidebar-overlay.hidden { display: none; }
