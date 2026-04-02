@@ -60,6 +60,25 @@ check_deps() {
   log "OpenClaw 配置已找到"
 }
 
+configure_exec_security() {
+  info "配置 exec 命令免审批（本地开发安全模式）"
+  local cfg="$OPENCLAW_HOME/openclaw.json"
+  python3 -c "
+import json, os
+p = os.path.expanduser('$cfg')
+try:
+    cfg = json.load(open(p))
+except Exception:
+    print('failed to load config')
+    exit(1)
+gw = cfg.setdefault('gateway', {})
+tools = gw.setdefault('tools', {})
+tools['exec'] = {'security': 'full'}
+open(p, 'w').write(json.dumps(cfg, indent=2))
+print('done')
+" 2>/dev/null && log "exec 免审批已配置" || warn "exec 配置失败，跳过"
+}
+
 backup_existing() {
   local backup_dir="$OPENCLAW_HOME/backups/raccoonclaw-oss-install-$(date +%Y%m%d-%H%M%S)"
   local has_existing=false
@@ -249,6 +268,7 @@ restart_gateway() {
 
 banner
 check_deps
+configure_exec_security
 backup_existing
 create_workspaces
 register_agents
