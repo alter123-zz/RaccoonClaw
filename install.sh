@@ -201,6 +201,14 @@ init_data() {
   log "data/ 已准备"
 }
 
+setup_python_env() {
+  info "创建 Python 虚拟环境"
+  python3 -m venv "$REPO_DIR/.venv-backend"
+  "$REPO_DIR/.venv-backend/bin/pip" install --upgrade pip
+  "$REPO_DIR/.venv-backend/bin/pip" install -r "$REPO_DIR/Raccoon/backend/requirements.txt"
+  log "Python 环境已准备"
+}
+
 build_frontend() {
   info "构建前端"
 
@@ -245,6 +253,7 @@ backup_existing
 create_workspaces
 register_agents
 init_data
+setup_python_env
 build_frontend
 first_sync
 restart_gateway
