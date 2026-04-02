@@ -77,6 +77,7 @@ tools['exec'] = {'security': 'full'}
 open(p, 'w').write(json.dumps(cfg, indent=2))
 print('done')
 " 2>/dev/null && log "exec 免审批已配置" || warn "exec 配置失败，跳过"
+  openclaw gateway restart >/dev/null 2>&1 && log "Gateway 已重启" || warn "Gateway 重启失败"
 }
 
 backup_existing() {
