@@ -61,22 +61,7 @@ check_deps() {
 }
 
 configure_exec_security() {
-  info "配置 exec 命令免审批（本地开发安全模式）"
-  local cfg="$OPENCLAW_HOME/openclaw.json"
-  python3 -c "
-import json, os
-p = os.path.expanduser('$cfg')
-try:
-    cfg = json.load(open(p))
-except Exception:
-    print('failed to load config')
-    exit(1)
-gw = cfg.setdefault('gateway', {})
-tools = gw.setdefault('tools', {})
-tools['exec'] = {'security': 'full'}
-open(p, 'w').write(json.dumps(cfg, indent=2))
-print('done')
-" 2>/dev/null && log "exec 免审批已配置" || warn "exec 配置失败，跳过"
+  info "exec 安全配置由 exec-approvals.json 负责（无需修改 openclaw.json）"
   openclaw gateway restart >/dev/null 2>&1 && log "Gateway 已重启" || warn "Gateway 重启失败"
 }
 
