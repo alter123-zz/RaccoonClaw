@@ -1,0 +1,23 @@
+{
+  "categories": [
+    {
+      "name": "政治",
+      "enabled": true
+    },
+    {
+      "name": "军事",
+      "enabled": true
+    },
+    {
+      "name": "经济",
+      "enabled": true
+    },
+    {
+      "name": "AI大模型",
+      "enabled": true
+    }
+  ],
+  "keywords": [],
+  "custom_feeds": [],
+  "feishu_webhook": ""
+}

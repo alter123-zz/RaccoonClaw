@@ -1,0 +1,67 @@
+# Runtime data (machine-specific)
+data/live_status.json
+data/agent_config.json
+data/model_change_log.json
+data/pending_model_changes.json
+data/last_model_change_result.json
+data/sync_status.json
+data/tasks_source.json
+data/tasks.json
+data/bitable_source.json
+data/mission_control_tasks.json
+data/officials_stats.json
+data/*.lock
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+/tmp/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+.venv-backend/
+venv/
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Node.js
+node_modules/
+edict/frontend/node_modules/
+
+# Frontend build output (rebuild from source)
+dashboard/dist/
+
+# macOS
+.DS_Store
+*.swp
+*~
+
+# IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# Large binary files
+*.mp4
+*.mov
+*.avi
+*.gif
+
+# Backups
+*.bak*

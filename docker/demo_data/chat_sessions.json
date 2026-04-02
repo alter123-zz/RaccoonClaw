@@ -1,0 +1,31 @@
+{
+  "sessions": [
+    {
+      "key": "demo:delivery_ops:task_intake",
+      "title": "任务接收与会话",
+      "agent": "delivery_ops",
+      "createdAt": "2026-03-15T09:00:00+08:00",
+      "updatedAt": "2026-03-15T09:30:00+08:00",
+      "messageCount": 6,
+      "summary": "接收并分派产品规划部周会纪要整理任务"
+    },
+    {
+      "key": "demo:engineering:research",
+      "title": "氢能政策调研",
+      "agent": "engineering",
+      "createdAt": "2026-03-28T08:40:00+08:00",
+      "updatedAt": "2026-03-28T15:00:00+08:00",
+      "messageCount": 12,
+      "summary": "燃料电池技术路线调研，调研完成但遇外部数据源阻塞"
+    },
+    {
+      "key": "demo:chief_of_staff:daily_sync",
+      "title": "晨会同步",
+      "agent": "chief_of_staff",
+      "createdAt": "2026-04-01T09:00:00+08:00",
+      "updatedAt": "2026-04-01T09:05:00+08:00",
+      "messageCount": 4,
+      "summary": "每日晨会同步，各部门汇报进展和阻塞项"
+    }
+  ]
+}

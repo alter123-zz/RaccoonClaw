@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RaccoonClaw-OSS Fallback Page</title>
+  <style>
+    :root{
+      --bg:#0b1020;
+      --panel:#121a2b;
+      --line:#26324a;
+      --text:#e6edf7;
+      --muted:#8ea0bf;
+      --accent:#5b8cff;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(180deg,#0b1020 0%,#121a2b 100%);
+      color:var(--text);
+      font-family:Inter,"PingFang SC","Segoe UI",sans-serif;
+      padding:24px;
+    }
+    .card{
+      width:min(720px,100%);
+      background:rgba(18,26,43,.92);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:32px;
+      box-shadow:0 24px 80px rgba(0,0,0,.35);
+    }
+    .eyebrow{
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--accent);
+      margin-bottom:14px;
+    }
+    h1{
+      margin:0 0 12px;
+      font-size:32px;
+      line-height:1.15;
+    }
+    p{
+      margin:0 0 14px;
+      font-size:16px;
+      line-height:1.7;
+      color:var(--muted);
+    }
+    .note{
+      margin-top:18px;
+      padding:14px 16px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:#0f1626;
+      color:var(--text);
+      font-size:14px;
+      line-height:1.6;
+    }
+    code{
+      background:#0b1020;
+      border:1px solid var(--line);
+      border-radius:8px;
+      padding:2px 6px;
+      font-size:13px;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="eyebrow">Fallback Page</div>
+    <h1>RaccoonClaw-OSS</h1>
+    <p>
+      This file is a retained compatibility page for the legacy <code>dashboard/server.py</code>
+      path. The current product UI lives in the modern frontend/backend stack under
+      <code>raccoon/frontend</code> and <code>raccoon/backend</code>.
+    </p>
+    <p>
+      The previous static dashboard with historical organization metaphors has been removed from
+      the OSS version to keep the repository aligned with the current architecture and product
+      language.
+    </p>
+    <div class="note">
+      If you are running the OSS project today, use the main FastAPI backend and React frontend
+      described in the repository README. This page remains only to avoid breaking older legacy
+      routes.
+    </div>
+  </main>
+</body>
+</html>

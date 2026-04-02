@@ -1,0 +1,269 @@
+{
+  "generatedAt": "2026-04-02T00:00:00+08:00",
+  "tasks": {
+    "D-20260320-003": {
+      "id": "D-20260320-003",
+      "title": "调研竞品 Q1 功能更新，输出对比报告",
+      "official": "产品规划负责人",
+      "org": "产品规划部",
+      "state": "Doing",
+      "now": "产品规划部正在整理竞品分析报告",
+      "block": "无",
+      "priority": "high",
+      "targetDept": "产品规划部",
+      "flowMode": "full",
+      "updatedAt": "2026-03-20T11:20:00Z",
+      "archived": false,
+      "output": "",
+      "flow_log": [
+        {
+          "at": "2026-03-20T09:00:00Z",
+          "from": "需求方",
+          "to": "总裁办",
+          "remark": "发起任务：调研竞品 Q1 功能更新"
+        },
+        {
+          "at": "2026-03-20T09:05:00Z",
+          "from": "总裁办",
+          "to": "产品规划部",
+          "remark": "总裁办按full流程转交产品规划部"
+        },
+        {
+          "at": "2026-03-20T11:20:00Z",
+          "from": "产品规划部",
+          "to": "评审质控部",
+          "remark": "产品规划部已完成方案，提交评审"
+        }
+      ],
+      "sourceMeta": {
+        "taskKind": "normal",
+        "flowMode": "full"
+      }
+    },
+    "D-20260325-002": {
+      "id": "D-20260325-002",
+      "title": "每天早上 9 点自动采集行业新闻并生成简报",
+      "official": "总裁办",
+      "org": "调度器",
+      "state": "Assigned",
+      "now": "等待调度执行：定时任务 · 每日 09:00",
+      "block": "无",
+      "priority": "normal",
+      "targetDept": "总裁办",
+      "flowMode": "light",
+      "updatedAt": "2026-03-25T10:00:00Z",
+      "archived": false,
+      "output": "定时任务 · 每日 09:00",
+      "flow_log": [
+        {
+          "at": "2026-03-25T10:00:00Z",
+          "from": "需求方",
+          "to": "总裁办",
+          "remark": "发起任务：每天早上 9 点自动采集行业新闻"
+        },
+        {
+          "at": "2026-03-25T10:00:01Z",
+          "from": "总裁办",
+          "to": "调度器",
+          "remark": "已登记为定时任务，当前不立即派发执行"
+        }
+      ],
+      "sourceMeta": {
+        "taskKind": "recurring",
+        "scheduleMode": "daily",
+        "scheduleLabel": "定时任务 · 每日 09:00",
+        "scheduleTime": "09:00",
+        "flowMode": "light"
+      }
+    },
+    "D-20260328-001": {
+      "id": "D-20260328-001",
+      "title": "氢能综合应用试点政策影响调研",
+      "official": "战略规划部",
+      "org": "总裁办",
+      "state": "Blocked",
+      "now": "等待外部数据源接入，API接口尚未提供",
+      "block": "外部数据源未就绪：能源局API接口延迟交付，预计4月5日后可用",
+      "priority": "high",
+      "targetDept": "工程研发部",
+      "flowMode": "full",
+      "updatedAt": "2026-03-28T14:00:00Z",
+      "archived": false,
+      "output": "",
+      "flow_log": [
+        {
+          "at": "2026-03-28T08:30:00Z",
+          "from": "需求方",
+          "to": "总裁办",
+          "remark": "发起任务：氢能综合应用试点政策影响调研"
+        },
+        {
+          "at": "2026-03-28T08:35:00Z",
+          "from": "总裁办",
+          "to": "工程研发部",
+          "remark": "总裁办转交工程研发部执行"
+        },
+        {
+          "at": "2026-03-28T08:40:00Z",
+          "from": "工程研发部",
+          "to": "工程研发部",
+          "remark": "🔍 调研中：技术路线分析已完成"
+        },
+        {
+          "at": "2026-03-28T15:00:00Z",
+          "from": "工程研发部",
+          "to": "交付运营部",
+          "remark": "🚫 阻塞：外部数据源API未就绪"
+        }
+      ],
+      "sourceMeta": {
+        "taskKind": "research",
+        "flowMode": "full"
+      }
+    }
+  },
+  "completed_tasks": {
+    "D-20260315-001": {
+      "id": "D-20260315-001",
+      "title": "整理本周产品会议纪要，输出执行清单",
+      "official": "产品规划负责人",
+      "org": "交付运营部",
+      "state": "Done",
+      "now": "已归档",
+      "block": "无",
+      "priority": "normal",
+      "targetDept": "产品规划部",
+      "flowMode": "full",
+      "updatedAt": "2026-03-15T09:30:00Z",
+      "archived": true,
+      "output": "docs/standup-20260315.md",
+      "outputMeta": {
+        "exists": true,
+        "lastModified": "2026-03-15 09:30"
+      },
+      "flow_log": [
+        {
+          "at": "2026-03-15T08:00:00Z",
+          "from": "需求方",
+          "to": "总裁办",
+          "remark": "发起任务：整理本周产品会议纪要，输出执行清单"
+        },
+        {
+          "at": "2026-03-15T08:05:00Z",
+          "from": "总裁办",
+          "to": "产品规划部",
+          "remark": "总裁办按full流程将任务转交产品规划部"
+        },
+        {
+          "at": "2026-03-15T08:45:00Z",
+          "from": "产品规划部",
+          "to": "评审质控部",
+          "remark": "产品规划部已完成，提交评审"
+        },
+        {
+          "at": "2026-03-15T09:10:00Z",
+          "from": "评审质控部",
+          "to": "交付运营部",
+          "remark": "✅ 通过"
+        },
+        {
+          "at": "2026-03-15T09:30:00Z",
+          "from": "交付运营部",
+          "to": "需求方",
+          "remark": "✅ 完成：执行清单已生成并归档"
+        }
+      ],
+      "sourceMeta": {
+        "taskKind": "normal",
+        "flowMode": "full"
+      }
+    },
+    "L-20260401-009": {
+      "id": "L-20260401-009",
+      "title": "撰写 AI Agent 落地应用技术博客",
+      "official": "品牌内容部",
+      "org": "总裁办",
+      "state": "Done",
+      "now": "已归档并回传",
+      "block": "无",
+      "priority": "normal",
+      "targetDept": "工程研发部",
+      "flowMode": "light",
+      "updatedAt": "2026-04-01T22:36:00Z",
+      "archived": false,
+      "output": "AI Agent落地应用实战博客（2800字）",
+      "outputMeta": {
+        "exists": true,
+        "lastModified": "2026-04-01 22:36"
+      },
+      "flow_log": [
+        {
+          "at": "2026-04-01T22:26:00Z",
+          "from": "需求方",
+          "to": "总裁办",
+          "remark": "直办任务：撰写AI Agent落地应用博客"
+        },
+        {
+          "at": "2026-04-01T22:29:00Z",
+          "from": "总裁办",
+          "to": "工程研发部",
+          "remark": "总裁办直派工程研发部"
+        },
+        {
+          "at": "2026-04-01T22:36:00Z",
+          "from": "工程研发部",
+          "to": "总裁办",
+          "remark": "✅ 完成并归档"
+        }
+      ],
+      "sourceMeta": {
+        "taskKind": "content",
+        "flowMode": "light"
+      }
+    },
+    "D-20260401-003": {
+      "id": "D-20260401-003",
+      "title": "调研 MiniMax Token Plan 速率限制",
+      "official": "技术负责人",
+      "org": "总裁办",
+      "state": "Done",
+      "now": "已归档并回传",
+      "block": "无",
+      "priority": "normal",
+      "targetDept": "工程研发部",
+      "flowMode": "direct",
+      "updatedAt": "2026-04-01T16:24:00Z",
+      "archived": false,
+      "output": "MiniMax Token Plan 速率限制调研报告（RPM/TPM双维度、5小时滚动窗口）",
+      "outputMeta": {
+        "exists": true,
+        "lastModified": "2026-04-01 16:24"
+      },
+      "flow_log": [
+        {
+          "at": "2026-04-01T16:21:00Z",
+          "from": "需求方",
+          "to": "总裁办",
+          "remark": "发起任务：调研MiniMax Token Plan速率限制"
+        },
+        {
+          "at": "2026-04-01T16:22:00Z",
+          "from": "总裁办",
+          "to": "工程研发部",
+          "remark": "总裁办直派工程研发部"
+        },
+        {
+          "at": "2026-04-01T16:24:00Z",
+          "from": "工程研发部",
+          "to": "总裁办",
+          "remark": "✅ 完成并归档"
+        }
+      ],
+      "sourceMeta": {
+        "taskKind": "research",
+        "flowMode": "direct"
+      }
+    }
+  },
+  "last_updated": "2026-04-02T00:00:00+08:00"
+}

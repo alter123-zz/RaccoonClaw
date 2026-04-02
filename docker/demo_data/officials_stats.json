@@ -1,0 +1,13 @@
+{
+  "officials": [
+    {"id": "chief_of_staff", "label": "总裁办", "activeTasks": 3, "doneTasks": 12, "blockedTasks": 0},
+    {"id": "planning", "label": "产品规划部", "activeTasks": 2, "doneTasks": 8, "blockedTasks": 0},
+    {"id": "review_control", "label": "评审质控部", "activeTasks": 1, "doneTasks": 5, "blockedTasks": 0},
+    {"id": "delivery_ops", "label": "交付运营部", "activeTasks": 4, "doneTasks": 15, "blockedTasks": 0},
+    {"id": "brand_content", "label": "品牌内容部", "activeTasks": 1, "doneTasks": 6, "blockedTasks": 0},
+    {"id": "business_analysis", "label": "经营分析部", "activeTasks": 2, "doneTasks": 9, "blockedTasks": 0},
+    {"id": "engineering", "label": "工程研发部", "activeTasks": 3, "doneTasks": 11, "blockedTasks": 1},
+    {"id": "people_ops", "label": "人力组织部", "activeTasks": 1, "doneTasks": 4, "blockedTasks": 0}
+  ],
+  "generatedAt": "2026-04-01T09:00:00+08:00"
+}

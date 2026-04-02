@@ -1,0 +1,39 @@
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  raccoonclaw:
+    build: .
+    ports:
+      - "7891:7891"
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    # 无需挂载 ~/.openclaw，容器内已自带 OpenClaw CLI 和自动初始化
+    # 如需持久化数据，可挂载:
+    # - ~/.openclaw:/home/appuser/.openclaw
+
+volumes:
+  redis_data:
+
+# 启动: docker compose up
+# 访问: http://localhost:7891
+#
+# 特性（v2.0）:
+# - 容器内自带 OpenClaw CLI，无需宿主机安装
+# - 首次启动自动初始化 workspaces 和 agents
+# - 自动加载演示数据，新用户可直接体验
+# - 删除容器后重新创建会自动重新初始化（删除 INIT_MARKER 可强制重初始化）

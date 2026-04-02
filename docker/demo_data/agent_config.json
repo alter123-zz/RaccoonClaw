@@ -1,0 +1,28 @@
+{
+  "agents": [
+    {
+      "id": "chief_of_staff",
+      "label": "总裁办",
+      "model": "claude-sonnet-4-7-2026-03-19",
+      "skills": ["task-routing", "workflow-management"]
+    },
+    {
+      "id": "planning",
+      "label": "产品规划部",
+      "model": "claude-sonnet-4-7-2026-03-19",
+      "skills": ["research", "analysis"]
+    },
+    {
+      "id": "review_control",
+      "label": "评审质控部",
+      "model": "claude-sonnet-4-7-2026-03-19",
+      "skills": ["quality-review"]
+    },
+    {
+      "id": "delivery_ops",
+      "label": "交付运营部",
+      "model": "claude-sonnet-4-7-2026-03-19",
+      "skills": ["dispatch", "delivery-tracking"]
+    }
+  ]
+}
