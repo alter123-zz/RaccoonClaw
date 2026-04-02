@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useStore, TAB_DEFS, type TabKey, startPolling, stopPolling, isTerminalState } from './store';
 import EdictBoard from './components/EdictBoard';
 import OfficialPanel from './components/OfficialPanel';
@@ -50,6 +50,7 @@ export default function App() {
   const unseenCompletedTaskIds = useStore((s) => s.unseenCompletedTaskIds);
   const unseenChatTaskNoticeIds = useStore((s) => s.unseenChatTaskNoticeIds);
   const markCompletedTasksSeen = useStore((s) => s.markCompletedTasksSeen);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const markChatTaskNoticesSeen = useStore((s) => s.markChatTaskNoticesSeen);
 
   useEffect(() => {
@@ -115,7 +116,17 @@ export default function App() {
 
   return (
     <div className="wrap enterprise-wrap enterprise-shell">
-      <aside className="workspace-sidebar">
+      <button
+        type="button"
+        className="sidebar-hamburger"
+        onClick={() => setSidebarOpen(!sidebarOpen)}
+        aria-label="切换侧边栏"
+      >☰</button>
+      <div
+        className={sidebarOpen ? 'workspace-sidebar-overlay' : 'workspace-sidebar-overlay hidden'}
+        onClick={() => setSidebarOpen(false)}
+      />
+      <aside className={sidebarOpen ? 'workspace-sidebar open' : 'workspace-sidebar'}>
         <div className="workspace-sidebar-brand">
           <div className="workspace-brand-lockup">
             <WorkspaceBrandHero />
@@ -142,7 +153,7 @@ export default function App() {
                       key={tab.key}
                       type="button"
                       className={`workspace-sidebar-link ${activeTab === tab.key ? 'active' : ''}`}
-                      onClick={() => setActiveTab(tab.key)}
+                      onClick={() => { setActiveTab(tab.key); setSidebarOpen(false); }}
                     >
                       <span className="workspace-sidebar-link-copy">
                         <i>{tab.icon}</i>

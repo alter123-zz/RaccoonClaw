@@ -11325,3 +11325,162 @@ code {
     padding: 24px 18px 20px;
   }
 }
+
+/* ══════════════════════════════════════════════════════
+   Responsive Design — 小屏适配
+   ══════════════════════════════════════════════════════ */
+
+/* 看板 4 列 → 2 列 → 1 列 */
+@media (max-width: 1100px) {
+  .board-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .board-column {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 680px) {
+  .board-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .board-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .board-scroll .board-grid {
+    display: flex;
+    flex-direction: row;
+    min-width: max-content;
+  }
+  .board-scroll .board-column {
+    min-width: 280px;
+    flex-shrink: 0;
+  }
+}
+
+/* 整体容器缩小间距 */
+@media (max-width: 900px) {
+  .wrap {
+    padding: 14px 12px 30px;
+  }
+  .ms-value {
+    font-size: 28px !important;
+  }
+  .board-shell {
+    gap: 10px;
+  }
+}
+
+/* 侧边栏折叠按钮 */
+@media (max-width: 768px) {
+  .workspace-sidebar {
+    position: fixed;
+    left: -240px;
+    top: 0;
+    bottom: 0;
+    width: 240px;
+    z-index: 1000;
+    background: var(--bg);
+    box-shadow: 2px 0 8px rgba(0,0,0,0.3);
+    transition: left 0.25s ease;
+    overflow-y: auto;
+  }
+  .workspace-sidebar.open {
+    left: 0;
+  }
+  .workspace-sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 999;
+  }
+  .workspace-sidebar:not(.open) ~ .workspace-sidebar-overlay {
+    display: none;
+  }
+  .wrap {
+    padding: 10px 10px 30px;
+  }
+  .hdr {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .brand-wrap {
+    flex-direction: row;
+  }
+  /* 小屏隐藏次要头部元素 */
+  .hdr-r {
+    display: none;
+  }
+  /* 看板列全宽 */
+  .board-grid {
+    grid-template-columns: 1fr !important;
+  }
+  /* 数字统计卡片 2 列 */
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  /* 关注列表 2 列 */
+  .focus-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* 隐藏小屏不适用的元素 */
+@media (max-width: 480px) {
+  .board-scroll {
+    overflow-x: auto;
+    overflow-y: auto;
+  }
+  .board-scroll .board-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    min-width: 0;
+  }
+  .stats-grid,
+  .focus-list {
+    grid-template-columns: 1fr !important;
+  }
+  .mission-actions {
+    flex-direction: column;
+  }
+}
+
+/* ── Hamburger 按钮 ── */
+.sidebar-hamburger {
+  display: none;
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 1001;
+  background: var(--bg-2, #2a2a2a);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 18px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.sidebar-hamburger:hover {
+  background: var(--bg-3, #3a3a3a);
+}
+
+/* ── Overlay 遮罩（侧边栏打开时显示） ── */
+.workspace-sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 998;
+}
+.workspace-sidebar-overlay.hidden {
+  display: none;
+}
+
+/* 小屏时显示 hamburger */
+@media (max-width: 768px) {
+  .sidebar-hamburger {
+    display: block;
+  }
+}
